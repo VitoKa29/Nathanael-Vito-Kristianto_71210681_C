@@ -15,7 +15,7 @@ class PrefixConverter:
 
     def cekValidExpression(self, expression):
         for i in expression:
-            if i.isalpha() or i == "(":
+            if i.isalpha() or i == "(" or i == ")":
                 return False
         return True
 
