@@ -13,28 +13,21 @@ class PrefixConverter:
         else:
             return "Isi Stack Kosong"
 
-    # method untuk menghapus data paling atas
-    def pop(self):
-        if self.stackList:
-            data = self.stackList.pop(-1)
-            return data
-        else:
-            return "Isi Stack Kosong"
+    def cekValidExpression(self, expression):
+        for i in expression:
+            if i.isalpha() or i == "(":
+                return False
+        return True
 
-    def cekValidExpression(self,expression):
-        if expression == "(" or expression == ")":
-            print("Expresi infix yang anda masukkan tidak valid !! ")
-                
-        
-    def infixToPrefix(self,expression):
-        
-        if expression == "(" or expression == ")":
-            for i in expression:
-                self.cekValidExpression(i)
-        else:
-            print(expression)
+    def infixToPrefix(self, expression):
 
-    
+        if " " in expression:
+            expression = expression.split()
+        if not self.cekValidExpression(expression):
+            return "Expresi Infix yang anda masukkan tidak valid !!"
+        #belumm selesaii
+
+
 
 # Test Case
 if __name__ == '__main__':
