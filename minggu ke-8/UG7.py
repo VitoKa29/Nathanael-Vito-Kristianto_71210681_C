@@ -36,7 +36,7 @@ class Kasir:
     def printAll(self): #menampilkan daftar pelanggan dalam sebuah kasir
         
         if len(self._data) > self._capacity:
-                self.resize(2)
+            self.resize(2)
         print("=== Kasir ===")
         c = len(self._data)-1
         n = 1
